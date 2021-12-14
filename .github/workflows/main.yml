@@ -66,9 +66,10 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_KEY }}
           passphrase: ${{ secrets.PASSPHRASE }} # Если ваш ssh-ключ защищён фразой-паролем
-          script: |
+          script: whoami
+          #script: |
             # Выполняет pull образа с DockerHub
-            sudo docker pull weigo/infra_actions_img
+            #sudo docker pull weigo/infra_actions_img
             #остановка всех контейнеров
-            sudo docker stop $(sudo docker ps -a -q)
-            sudo docker run --rm -d -p 5000:5000 weigo/infra_actions_img
+            #sudo docker stop $(sudo docker ps -a -q)
+            #sudo docker run --rm -d -p 5000:5000 weigo/infra_actions_img
